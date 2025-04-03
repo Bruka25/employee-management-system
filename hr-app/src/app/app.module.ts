@@ -12,6 +12,7 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./components/layout/header/header.component";
 import { SidebarComponent } from "./components/layout/sidebar/sidebar.component";
 import { EmployeeListComponent } from "./components/employee/employee-list/employee-list.component";
+import { EmployeeFormComponent } from './components/employee/employee-form/employee-form.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { EmployeeListComponent } from "./components/employee/employee-list/emplo
     HeaderComponent,
     SidebarComponent,
     EmployeeListComponent,
+    EmployeeFormComponent,
   ],
   imports: [
     BrowserModule,

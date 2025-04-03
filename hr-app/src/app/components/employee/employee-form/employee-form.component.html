@@ -1,0 +1,127 @@
+<h2 mat-dialog-title>{{ isEditMode ? "Edit" : "Add" }} Employee</h2>
+
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input
+          matInput
+          formControlName="firstName"
+          placeholder="Enter first name"
+        />
+        <mat-error *ngIf="employeeForm.get('firstName')?.errors?.required"
+          >First name is required</mat-error
+        >
+        <mat-error *ngIf="employeeForm.get('firstName')?.errors?.minlength"
+          >First name must be at least 2 characters</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input
+          matInput
+          formControlName="lastName"
+          placeholder="Enter last name"
+        />
+        <mat-error *ngIf="employeeForm.get('lastName')?.errors?.required"
+          >Last name is required</mat-error
+        >
+        <mat-error *ngIf="employeeForm.get('lastName')?.errors?.minlength"
+          >Last name must be at least 2 characters</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Enter email" />
+        <mat-error *ngIf="employeeForm.get('email')?.errors?.required"
+          >Email is required</mat-error
+        >
+        <mat-error *ngIf="employeeForm.get('email')?.errors?.email"
+          >Please enter a valid email</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="phone" placeholder="123-456-7890" />
+        <mat-error *ngIf="employeeForm.get('phone')?.errors?.required"
+          >Phone is required</mat-error
+        >
+        <mat-error *ngIf="employeeForm.get('phone')?.errors?.pattern"
+          >Please enter a valid phone number (123-456-7890)</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Department</mat-label>
+        <mat-select formControlName="departmentId">
+          <mat-option *ngFor="let dept of departments" [value]="dept.id">
+            {{ dept.name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="employeeForm.get('departmentId')?.errors?.required"
+          >Department is required</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Position</mat-label>
+        <input
+          matInput
+          formControlName="position"
+          placeholder="Enter position"
+        />
+        <mat-error *ngIf="employeeForm.get('position')?.errors?.required"
+          >Position is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Hire Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="hireDate" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="employeeForm.get('hireDate')?.errors?.required"
+          >Hire date is required</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Salary</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="salary"
+          placeholder="Enter salary"
+        />
+        <mat-error *ngIf="employeeForm.get('salary')?.errors?.required"
+          >Salary is required</mat-error
+        >
+        <mat-error *ngIf="employeeForm.get('salary')?.errors?.min"
+          >Salary must be greater than 0</mat-error
+        >
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="onCancel()">Cancel</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="employeeForm.invalid"
+    >
+      {{ isEditMode ? "Update" : "Add" }}
+    </button>
+  </mat-dialog-actions>
+</form>
