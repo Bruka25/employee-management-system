@@ -10,9 +10,10 @@ import { AppComponent } from "./app.component";
 import { SidebaarComponent } from './components/layout/sidebaar/sidebaar.component';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
 import { EmployeeListComponent } from './components/employee/employee-list/employee-list.component';
+import { HeaderComponent } from './components/layout/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebaarComponent, SidebarComponent, EmployeeListComponent],
+  declarations: [AppComponent, SidebaarComponent, SidebarComponent, EmployeeListComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
