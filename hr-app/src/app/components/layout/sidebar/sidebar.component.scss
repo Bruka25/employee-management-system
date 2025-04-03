@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  height: 100%;
+  background-color: #fff;
+}
+
+.sidebar-header {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.03);
+
+  .logo {
+    width: 120px;
+    height: auto;
+  }
+}
+
+.mat-nav-list {
+  padding-top: 0;
+
+  a {
+    height: 48px;
+
+    &.active {
+      background: rgba(0, 0, 0, 0.04);
+      color: #3f51b5;
+
+      mat-icon {
+        color: #3f51b5;
+      }
+    }
+  }
+
+  mat-icon {
+    margin-right: 16px;
+  }
+}

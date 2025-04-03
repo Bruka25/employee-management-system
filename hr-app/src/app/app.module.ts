@@ -7,9 +7,12 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { SidebaarComponent } from './components/layout/sidebaar/sidebaar.component';
+import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
+import { EmployeeListComponent } from './components/employee/employee-list/employee-list.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SidebaarComponent, SidebarComponent, EmployeeListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

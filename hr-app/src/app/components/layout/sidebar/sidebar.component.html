@@ -1,0 +1,27 @@
+<mat-nav-list>
+  <div class="sidebar-header">
+    <img src="assets/logo.png" alt="Company Logo" class="logo" />
+  </div>
+
+  <a mat-list-item routerLink="/dashboard" routerLinkActive="active">
+    <mat-icon matListIcon>dashboard</mat-icon>
+    <span>Dashboard</span>
+  </a>
+
+  <a mat-list-item routerLink="/employees" routerLinkActive="active">
+    <mat-icon matListIcon>people</mat-icon>
+    <span>Employees</span>
+  </a>
+
+  <a mat-list-item routerLink="/departments" routerLinkActive="active">
+    <mat-icon matListIcon>business</mat-icon>
+    <span>Departments</span>
+  </a>
+
+  <mat-divider></mat-divider>
+
+  <a mat-list-item routerLink="/reports" routerLinkActive="active">
+    <mat-icon matListIcon>bar_chart</mat-icon>
+    <span>Reports</span>
+  </a>
+</mat-nav-list>
